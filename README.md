@@ -6,4 +6,4 @@ replace DISCORD_TOKEN with your Discord Token
 
 ## Running
 
-run node bot.js
+run node bot.js or npm start to start the bot.

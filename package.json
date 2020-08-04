@@ -5,13 +5,14 @@
   "main": "bot.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start" : "node bot.js"
+    "start": "node bot.js"
   },
   "author": "Steve Hellier <steve_hellier@hotmail.com>",
   "license": "ISC",
   "dependencies": {
     "discord.js": "^12.2.0",
-    "dotenv": "^8.2.0"
+    "dotenv": "^8.2.0",
+    "node-fetch": "^2.6.0"
   },
   "devDependencies": {
     "eslint": "^7.5.0",

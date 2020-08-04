@@ -1,9 +1,11 @@
 const ping = require('./ping');
 const eightBall = require('./8ball');
+const bitcoin = require('./bitcoin');
 
 const commands = {
   ping,
   '8ball': eightBall,
+  bitcoin,
 };
 
 /* eslint no-console: 0 */

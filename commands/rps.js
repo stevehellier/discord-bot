@@ -1,15 +1,37 @@
 module.exports = async (msg) => {
-  const t = ['Rock', 'Paper', 'Scissors'];
+  const choices = ['Rock', 'Paper', 'Scissors'];
 
-  const computer = t[Math.floor(Math.random() * t.length)];
+  const computer = choices[Math.floor(Math.random() * choices.length)];
 
   const player = msg.content.slice(4).trim();
+
   let result = 'Result';
-  if (computer === player) {
-    result = 'Draw';
+
+  if (choices.indexOf(player) === -1) {
+    result = 'invalid choice, please select either Rock, Paper or Scissors';
   }
 
-  console.log(computer);
+  if (player === computer) {
+    result = 'Draw';
+  } else if (player === 'Rock') {
+    if (computer === 'Paper') {
+      result = `You lose! ${computer} beats ${player}`;
+    } else {
+      result = `You win! ${player} beats ${computer}`;
+    }
+  } else if (player === 'Paper') {
+    if (computer === 'Scissors') {
+      result = `You lose! ${computer} beats ${player}`;
+    } else {
+      result = `You win! ${player} beats ${computer}`;
+    }
+  } else if (player === 'Scissors') {
+    if (computer === 'Rock') {
+      result = `You lose! ${computer} beats ${player}`;
+    } else {
+      result = `You win! ${player} beats ${computer}`;
+    }
+  }
 
   await msg.channel.send(result);
 };
